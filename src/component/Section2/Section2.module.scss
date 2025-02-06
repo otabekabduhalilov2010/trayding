@@ -1,0 +1,49 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    color: white;
+    gap: 30px;
+    background: linear-gradient(180deg, rgba(14, 12, 27, 0) 72.6%, #0E0C1B 95.07%);
+    border: 1px solid black;
+    width: 1320px;
+    height: 1010px;
+    margin-top: 100px;
+    margin-left: -70px;
+    box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.5);
+
+
+    h1 {
+        
+        font-size: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+   
+}
+
+.text {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+    p {
+        font-weight: 400;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+.igor {
+    width: 740px;
+    height: 964px;
+    top: 1071px;
+    left: 939px;
+
+    
+   
+}

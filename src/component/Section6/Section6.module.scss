@@ -1,0 +1,41 @@
+.title {
+    color: white;
+    
+    a {
+        width: 390px;
+        text-decoration: none;
+        text-align: center;
+        padding: 30px;
+        background: #9A24D2;
+        color: white;
+        border: none;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        border-radius: 20px;
+       &:hover {
+        transition: 0.5s;
+        box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
+        scale: 1.1;
+       }
+        img {
+            height: 20px;
+        }
+    }
+
+    h1 {
+    
+        font-size: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+    
+}
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 100px;
+   
+}
+

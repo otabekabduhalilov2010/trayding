@@ -1,0 +1,45 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    
+}
+
+.link {
+    display: flex;
+    gap: 30px;
+    
+    
+    a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+            scale: 1.1;
+            transition: 0.5s;
+            color: #00FFB2;
+        }
+    }
+}
+
+
+
+
+    .slk{
+        
+        a {
+        text-decoration: none;
+        background-color: #070610;
+        border: 1px solid #00FFB2;
+        width: 160px;
+        height: 44px;
+        padding: 15px;
+        margin-top: 30px;
+        border-radius: 10px;
+        color: #00FFB2;
+        color: white;
+        cursor: pointer;
+        
+
+        }
+    }

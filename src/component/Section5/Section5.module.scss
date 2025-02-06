@@ -1,0 +1,200 @@
+.section {
+    background: #18152C;
+}
+
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    margin-top: 100px;
+}
+
+
+.title {
+    color: white;
+    text-align: center;
+
+    h1 {
+    
+            font-size: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+        
+    }
+
+
+    button {
+        width: 390px;
+        text-align: center;
+        padding: 30px;
+        background: #9A24D2;
+        color: white;
+        border: none;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        border-radius: 20px;
+       &:hover {
+        transition: 0.5s;
+        box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
+        scale: 1.1;
+       }
+        img {
+            height: 20px;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 100;
+    }
+    
+    s {
+        font-size: 30px;
+        margin: 20px;
+        font-weight: 800px;
+    }
+
+    b {
+        font-size: 40px;
+    }
+}
+
+.suma {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    b {
+        color: aquamarine;
+    }
+}
+
+
+
+.section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .title {
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .suma {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+    margin: 10px 0;
+  
+    s {
+      font-size: 1rem;
+      color: gray;
+      margin-right: 10px;
+    }
+  }
+  
+  .button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  
+    img {
+      width: 20px;
+    }
+  }
+  
+  .terms {
+    font-size: 0.8rem;
+    color: gray;
+    margin-top: 10px;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: #18152C;
+    padding: 20px;
+    border-radius: 19px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .input {
+   
+  }
+
+  .title1 {
+    width: 200px;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 30px;
+  }
+  
+  .closeButton {
+    background: rgb(12, 144, 65);
+    color: white;
+    padding: 30px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submitButton {
+    background: #ff6600;
+    color: white;
+    padding: 30px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  .btn1 {
+    background: rgb(12, 144, 65);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn2 {
+    background: rgb(144, 12, 12);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 20px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+  }

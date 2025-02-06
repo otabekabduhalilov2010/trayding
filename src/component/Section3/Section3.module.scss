@@ -1,0 +1,80 @@
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    justify-content: center;
+ 
+  
+    h1{
+        font-size: 20px;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+}
+
+
+.card {
+    border: 2px solid black;
+    background-color: #1C1933;
+    width: 256px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    height: 335px;
+    padding-top: 40px;
+
+    &:hover {
+        scale: 1.2;
+        background: linear-gradient(180deg, #9A24D2 0%, #75209D 100%);
+        transition: 0.5s;
+        box-shadow: 0px 10px 60px rgba(210, 36, 207, 0.5);
+      }
+
+}
+
+.section{
+    background-image: url(./liniya2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    filter: brightness(1.8);
+}
+
+
+.title {
+    color: white;
+    h1 {
+        font-size: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        font-size: 30px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-top: 16px;
+    }
+}
+
+
+.wrap {
+    display: flex;
+    gap: 200px;
+}

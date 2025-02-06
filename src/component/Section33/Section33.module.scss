@@ -1,0 +1,43 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 200px;
+     border: 1px solid black;
+     box-shadow: 0px 10px 60px rgba(210, 36, 53, 0.5);
+    margin-bottom: 200px;
+
+    background-image: url(./Krug.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+
+    h1 {
+        font-size: 60px;
+        padding: 10px;
+        font-weight: 500;
+    }
+
+    h3 {
+        padding: 10px;
+        font-size: 40px;
+        font-weight: 300;
+    }
+
+    b {
+       
+        font-size: 40px;
+        font-weight: 100;
+    }
+
+
+    img {
+        width: 700px;
+    }
+}
+
+.title {
+    text-align: center;
+    font-family: "Open Sans", serif;;
+}

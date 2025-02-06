@@ -1,0 +1,51 @@
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white;
+    
+  }
+  
+  .highlight {
+    color: #0ff; /* Цвет для слова "ЧЕМУ" */
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    margin-bottom: 100px;
+    
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    
+  }
+  
+  .number {
+    text-align: center;
+    background: #0ff;
+    color: #000;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+  
+  .wrap {
+    margin-top: 100px;
+
+    background-image: url(./tablets.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }
