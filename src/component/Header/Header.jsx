@@ -38,7 +38,7 @@ const Header = () => {
               <Link data-aos="fade-up" to="/book">Книга</Link>
             </div>
             <div className={s.slk}>
-            <a href="https://t.me/Zeronight706">Связаться</a>
+            <a href="https://t.me/nikita_kremlev">Связаться</a>
             </div>
           </div>
         </nav>

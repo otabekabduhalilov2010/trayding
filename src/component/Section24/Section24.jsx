@@ -16,7 +16,7 @@ const Section24 = () => {
             Стань частью крупнейшего трейдинг сообщества <br />
             и начни торговать на криптовалютном рынке уже сейчас
           </h2>
-          <a href="https://t.me/ananimusO706" data-aos="fade-up" data-aos-delay="200">Вступить в сообщество</a>
+          <a href="https://t.me/+CYwJbsxF9Co2NzMy" data-aos="fade-up" data-aos-delay="200">Вступить в сообщество</a>
 
           <div className={s.stats}>
             <div className={s.stat} data-aos="fade-up" data-aos-delay="300">

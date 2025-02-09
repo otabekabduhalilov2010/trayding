@@ -10,32 +10,27 @@
     margin-top: 100px;
     margin-left: -70px;
     box-shadow: 30px 30px 60px rgba(0, 0, 0, 0.5);
+}
 
-
-    h1 {
-        
-        font-size: 50px;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-   
+.wrap h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .text {
     display: flex;
     gap: 20px;
     align-items: center;
-    
-    p {
-        font-weight: 400;
-    }
+}
 
-    img {
-        width: 30px;
-        height: 30px;
-    }
+.text p {
+    font-weight: 400;
+}
 
+.text img {
+    width: 30px;
+    height: 30px;
 }
 
 .igor {
@@ -43,7 +38,58 @@
     height: 964px;
     top: 1071px;
     left: 939px;
+}
 
-    
-   
+/* Адаптивность для экранов до 1024px */
+@media (max-width: 1024px) {
+    .wrap {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+    .wrap h1 {
+        font-size: 40px;
+    }
+    .igor {
+        width: 600px;
+        height: auto;
+    }
+}
+
+/* Адаптивность для экранов до 768px */
+@media (max-width: 768px) {
+    .wrap {
+        gap: 20px;
+    }
+    .wrap h1 {
+        font-size: 35px;
+    }
+    .text {
+        flex-direction: column;
+        text-align: center;
+    }
+    .igor {
+        width: 500px;
+    }
+}
+
+/* Адаптивность для экранов до 480px */
+@media (max-width: 480px) {
+    .wrap {
+        padding: 20px;
+        box-shadow: none;
+    }
+    .wrap h1 {
+        font-size: 30px;
+    }
+    .text img {
+        width: 25px;
+        height: 25px;
+    }
+    .igor {
+        width: 100%;
+        height: auto;
+    }
 }

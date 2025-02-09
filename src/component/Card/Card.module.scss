@@ -29,3 +29,51 @@
         font-weight: 60;
     }
 }
+
+@media (max-width: 1024px) {
+  .card {
+    width: 260px;
+    height: 450px;
+    padding: 15px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 220px;
+    height: 400px;
+    padding: 10px;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}

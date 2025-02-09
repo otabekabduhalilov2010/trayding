@@ -5,15 +5,14 @@
     a {
         color: white;
         text-decoration: none;
-        gap: 20px;
-        display: flex;
         margin: 10px;
 
     }
+
+  
 }
 
 .wrap {
     display: flex;
-    justify-content: center;
-    gap: 100px;
+    justify-content: space-between;
 }

@@ -62,3 +62,35 @@
     }
   }
   
+
+  @media (max-width: 768px) {
+    .testimonials {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .testimonialCard {
+      width: 90%;
+      max-width: 400px;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonialsSection {
+      padding: 1rem;
+    }
+  
+    .testimonialCard {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .navigation {
+      .navButton {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  

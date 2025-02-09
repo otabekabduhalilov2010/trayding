@@ -1,56 +1,104 @@
 .wrap {
     color: white;
     background-image: url(./trading.png);
-    background-size: cover;
+    background-size: contain;
     background-position: left;
     background-repeat: no-repeat;
     filter: brightness(1.7);
-  
-    p {
-        font-size: 20px;
-        font-weight: 100;
-    }
+    padding: 20px;
+ 
+}
 
-    h5 {
-        border: 2px solid #9A24D2;
-        width: 200px;
+.wrap p {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.wrap h5 {
+    border: 2px solid #9A24D2;
+    width: 200px;
+    padding: 20px;
+    background: #9A24D2;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.wrap h5:hover {
+    transition: 0.5s;
+    box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
+    scale: 1.1;
+}
+
+.wrap h1 {
+    font-size: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.wrap button {
+    width: 390px;
+    text-align: center;
+    padding: 30px;
+    background: #9A24D2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.wrap button:hover {
+    transition: 0.5s;
+    box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
+    scale: 1.1;
+}
+
+.wrap button img {
+    height: 20px;
+}
+
+/* Адаптивность для экранов до 1024px */
+@media (max-width: 1024px) {
+    .wrap h1 {
+        font-size: 60px;
+    }
+    .wrap button {
+        width: 300px;
         padding: 20px;
-        background: #9A24D2;
-        border-radius: 5px;
-        font-size: 24px;
-        font-weight: 400;
-        text-transform: uppercase;
-        &:hover {
-            transition: 0.5s;
-            box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
-            scale: 1.1;
-           }
     }
+}
 
-    h1 {
-        font-size: 80px;
-        font-weight: 700;
-        text-transform: uppercase;
+/* Адаптивность для экранов до 768px */
+@media (max-width: 768px) {
+    .wrap h1 {
+        font-size: 40px;
     }
+    .wrap button {
+        width: 250px;
+        padding: 15px;
+    }
+    .wrap h5 {
+        width: 180px;
+        padding: 15px;
+        font-size: 20px;
+    }
+}
 
-    button {
-        width: 390px;
-        text-align: center;
-        padding: 30px;
-        background: #9A24D2;
-        color: white;
-        border: none;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        border-radius: 20px;
-       &:hover {
-        transition: 0.5s;
-        box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
-        scale: 1.1;
-       }
-        img {
-            height: 20px;
-        }
+/* Адаптивность для экранов до 480px */
+@media (max-width: 480px) {
+    .wrap h1 {
+        font-size: 30px;
+    }
+    .wrap h5 {
+        width: 150px;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .wrap button {
+        width: 200px;
+        padding: 10px;
+        gap: 20px;
     }
 }

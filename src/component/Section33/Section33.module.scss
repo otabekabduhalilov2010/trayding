@@ -3,41 +3,88 @@
     justify-content: space-between;
     color: white;
     margin-top: 200px;
-     border: 1px solid black;
-     box-shadow: 0px 10px 60px rgba(210, 36, 53, 0.5);
+    border: 1px solid black;
+    box-shadow: 0px 10px 60px rgba(210, 36, 53, 0.5);
     margin-bottom: 200px;
-
     background-image: url(./Krug.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
+}
 
+.wrap h1 {
+    font-size: 60px;
+    padding: 10px;
+    font-weight: 500;
+}
 
-    h1 {
-        font-size: 60px;
-        padding: 10px;
-        font-weight: 500;
-    }
+.wrap h3 {
+    padding: 10px;
+    font-size: 40px;
+    font-weight: 300;
+}
 
-    h3 {
-        padding: 10px;
-        font-size: 40px;
-        font-weight: 300;
-    }
+.wrap b {
+    font-size: 40px;
+    font-weight: 100;
+}
 
-    b {
-       
-        font-size: 40px;
-        font-weight: 100;
-    }
-
-
-    img {
-        width: 700px;
-    }
+.wrap img {
+    width: 700px;
 }
 
 .title {
     text-align: center;
-    font-family: "Open Sans", serif;;
+    font-family: "Open Sans", serif;
+}
+
+@media (max-width: 1200px) {
+    .wrap {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-position: center;
+    }
+
+    .wrap img {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrap h1 {
+        font-size: 40px;
+    }
+
+    .wrap h3 {
+        font-size: 30px;
+    }
+
+    .wrap b {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrap {
+        padding: 20px;
+    }
+
+    .wrap h1 {
+        font-size: 30px;
+    }
+
+    .wrap h3 {
+        font-size: 20px;
+    }
+
+    .wrap b {
+        font-size: 18px;
+    }
+
+    .wrap img {
+        width: 100%;
+        max-width: 300px;
+    }
 }

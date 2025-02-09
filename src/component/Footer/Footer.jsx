@@ -11,12 +11,16 @@ const Footer = () => {
   return (
     <section className={s.section}>
       <div className="container">
+          <div data-aos="fade-up" className={s.imgs}>
+          <img src="./Logo.png" alt="Логотип" />
+          </div>
         <div className={s.wrap}>
-          <div className={s.title} data-aos="fade-up">
-            <img src="./Logo.png" alt="Логотип" />
-            <a href="https://www.youtube.com/@L-A-Igrok">Обучающие ролики</a>
-            <a href="https://www.youtube.com/watch?v=6BFTVg7Jhfk">Подкаст L.A.Igrok</a>
-            <a href="">Личный кабинет</a>
+          <div className={s.title} data-aos="fade-down">
+           <div className={s.links}>
+            <a  data-aos="fade-down" href="https://www.youtube.com/@L-A-Igrok">Обучающие ролики</a>
+            <a  data-aos="fade-up" href="https://www.youtube.com/watch?v=6BFTVg7Jhfk">Подкаст L.A.Igrok</a>
+            <a  data-aos="fade-down" href="">Личный кабинет</a>
+           </div>
 
             <p>ИНН: 9701168470</p>
             <p>ОГРН: 1207700502206</p>

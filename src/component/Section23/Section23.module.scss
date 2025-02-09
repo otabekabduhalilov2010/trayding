@@ -1,62 +1,113 @@
 .section {
-    color: #fff;
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-  
-  
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #0ff;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.checkmark {
+  font-size: 30px;
+  color: #0ff;
+  margin-top: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
   h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
+      font-size: 24px;
   }
-  
-  .highlight {
-    color: #0ff;
-  }
-  
-  .steps {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .step {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-    position: relative;
-  }
-  
   .circle {
-    width: 50px;
-    height: 50px;
-    background: #0ff;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin: 0 auto 10px;
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
   }
-  
-  h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  .steps {
+      gap: 15px;
   }
-  
+}
+
+@media (max-width: 768px) {
+  h2 {
+      font-size: 22px;
+  }
+  .step {
+      min-width: 150px;
+  }
+  .circle {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+  }
   p {
-    font-size: 14px;
-    color: #bbb;
+      font-size: 13px;
   }
-  
-  .checkmark {
-    font-size: 30px;
-    color: #0ff;
-    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  h2 {
+      font-size: 20px;
   }
-  
+  .steps {
+      flex-direction: column;
+      align-items: center;
+  }
+  .step {
+      width: 100%;
+  }
+  .circle {
+      width: 35px;
+      height: 35px;
+      font-size: 14px;
+  }
+  p {
+      font-size: 12px;
+  }
+}
