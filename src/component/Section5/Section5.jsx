@@ -56,7 +56,7 @@ const Section5 = () => {
       <section className={s.section} data-aos="fade-up">
         <div className="container">
           <div className={s.wrap}>
-            <img src="./Planshed.png" alt="" data-aos="zoom-in" />
+            <img className={s.planshed} src="./Planshed.png" alt="" data-aos="zoom-in" />
             <div className={s.title} data-aos="fade-left">
               <h1>Записаться на <br /> пробный <br /> интерактив</h1>
               <p>Выбери успешную торговую стратегию вместе с Игорем Тощаковым </p>

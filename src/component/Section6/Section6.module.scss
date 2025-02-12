@@ -50,6 +50,10 @@
         max-width: 300px;
         padding: 20px;
     }
+
+    .phone {
+        width: 350px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -78,5 +82,9 @@
         width: 100%;
         padding: 10px;
         font-size: 14px;
+    }
+
+    .phone {
+        width: 300px;
     }
 }

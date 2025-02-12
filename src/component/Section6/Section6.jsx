@@ -19,7 +19,7 @@ const Section6 = () => {
                 <a  data-aos="zoom-in" href="https://t.me/+CYwJbsxF9Co2NzMy">Вступить в чат </a>
             </div>
             <div className={s.phone} data-aos="fade-left">
-              <img src="./telefoni.png" alt="" />
+              <img className={s.phone} src="./telefoni.png" alt="" />
             </div>
           </div>
         </div>
