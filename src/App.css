@@ -1,6 +1,7 @@
 body {
    background: #18152C;
   font-family: "Open Sans", serif;;
+  font-size: clamp(1rem, 0.75rem + 1vw, 1.5rem);
 }
 
 

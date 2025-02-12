@@ -87,6 +87,19 @@
         width: 220px;
         height: 300px;
     }
+
+    .cards p {
+        font-size: 13px;
+        font-weight: 100;
+    }
+    
+    .cards h1 {
+        font-size: 18px;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+    
+
 }
 
 /* Адаптивность для экранов до 768px */
@@ -103,6 +116,17 @@
     }
     .title h1, .title h3 {
         font-size: 25px;
+    }
+
+    .cards p {
+        font-size: 10px;
+        font-weight: 100;
+    }
+
+    .cards h1 {
+        font-size: 16px;
+        font-weight: 200;
+        text-transform: uppercase;
     }
 }
 
@@ -123,4 +147,16 @@
     .title h1, .title h3 {
         font-size: 20px;
     }
+
+    .cards h1 {
+        font-size: 10px;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+
+    .cards p {
+        font-size: 8px;
+        font-weight: 100;
+    }
+
 }

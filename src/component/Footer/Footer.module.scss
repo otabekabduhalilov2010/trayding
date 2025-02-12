@@ -1,18 +1,26 @@
 .title {
     color: white;
     
-
     a {
         color: white;
         text-decoration: none;
         margin: 10px;
-
     }
-
-  
 }
 
 .wrap {
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .wrap {
+        flex-direction: column; /* Меняет расположение элементов на вертикальное на маленьких экранах */
+        align-items: center;
+    }
+    
+    .title a {
+        display: block; /* Делает ссылки блочными для удобства клика на мобильных устройствах */
+        margin: 5px 0;
+    }
 }
