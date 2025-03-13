@@ -1,87 +1,149 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 4, 47, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    padding: 1rem 0;
+}
+
 .menu {
     display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    img {
+        height: 40px;
+        width: auto;
+    }
 }
 
 .link {
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.link a {
-    text-decoration: none;
-    color: white;
-    transition: 0.5s;
-}
-
-.link a:hover {
-    scale: 1.1;
-    color: #00FFB2;
-}
-
-.slk a {
-    text-decoration: none;
-    background-color: #070610;
-    border: 1px solid #00FFB2;
-    width: 160px;
-    height: 44px;
-    padding: 8px;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    display: flex;
+    gap: 2rem;
     align-items: center;
-    justify-content: center;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00FFB2;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
 }
 
-/* Адаптивность */
-@media (max-width: 1024px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    
+    span {
+        width: 100%;
+        height: 2px;
+        background: white;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    .link {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+
+    &.active {
+        span {
+            &:first-child {
+                transform: translateY(11px) rotate(45deg);
+            }
+            
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            
+            &:last-child {
+                transform: translateY(-11px) rotate(-45deg);
+            }
+        }
     }
-    .slk a {
-        width: 140px;
-        height: 40px;
-        padding: 10px;
+}
+
+.fullscreenMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(20, 7, 65, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1000;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 600;
+        position: relative;
+        padding: 0.5rem 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00FFB2;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
     }
 }
 
 @media (max-width: 768px) {
-    .menu {
-        margin-bottom: 50px;
-    }
     .link {
-        gap: 10px;
+        display: none;
     }
-    .slk a {
-        width: 130px;
-        height: 38px;
-        padding: 8px;
+
+    .burger {
+        display: flex;
     }
 }
 
-@media (max-width: 480px) {
-    .menu {
-        margin-bottom: 30px;
-    }
-    .link {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-    .slk a {
-        width: 120px;
-        height: 36px;
-        padding: 6px;
+@media (min-width: 769px) {
+    .fullscreenMenu {
+        display: none;
     }
 }

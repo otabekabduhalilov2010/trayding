@@ -1,90 +1,307 @@
-.title {
-    color: white;
-    
-    a {
-        width: 390px;
-        text-decoration: none;
-        text-align: center;
-        padding: 30px;
-        background: #9A24D2;
-        color: white;
-        border: none;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        border-radius: 20px;
-        &:hover {
-            transition: 0.5s;
-            box-shadow: 0px 10px 60px rgba(154, 36, 210, 0.5);
-            scale: 1.1;
-        }
-        img {
-            height: 20px;
-        }
-    }
-
-    h1 {
-        font-size: 50px;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-}
-
-.wrap {
+.section {
+    background: #18152C;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 100px;
-}
-
-/* Адаптивность */
-@media (max-width: 1024px) {
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+  
+  .title {
+    color: white;
+    position: relative;
+  }
+  
+  .heading {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #fff, #9A24D2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #9A24D2;
+      animation: lineGrow 1.5s ease-out forwards;
+    }
+  }
+  
+  .description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .joinButton {
+    width: 390px;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 30px;
+    background: linear-gradient(45deg, #9A24D2, #6B1B9A);
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+      transition: 0.5s;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(154, 36, 210, 0.3);
+      
+      &::before {
+        left: 100%;
+      }
+      
+      .icon {
+        transform: rotate(15deg) scale(1.2);
+      }
+    }
+  }
+  
+  .icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .phoneWrapper {
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .phone {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .phoneGlow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(154, 36, 210, 0.2) 0%, transparent 70%);
+    filter: blur(20px);
+    z-index: 1;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  .circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(154, 36, 210, 0.3);
+    
+    &:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 10%;
+      animation: rotate 10s linear infinite;
+    }
+    
+    &:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      top: 40%;
+      right: 5%;
+      animation: rotate 15s linear infinite reverse;
+    }
+    
+    &:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      bottom: 15%;
+      left: 20%;
+      animation: rotate 8s linear infinite;
+    }
+  }
+  
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #9A24D2;
+    border-radius: 50%;
+    
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+        animation: 
+          float #{random(6) + 4}s ease-in-out infinite,
+          glow #{random(3) + 2}s ease-in-out infinite alternate;
+      }
+    }
+  }
+  
+  @keyframes lineGrow {
+    from { width: 0; }
+    to { width: 100px; }
+  }
+  
+  @keyframes fadeIn {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotateY(0);
+    }
+    50% {
+      transform: translateY(-20px) rotateY(5deg);
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 1024px) {
     .wrap {
-        grid-template-columns: 1fr;
-        gap: 50px;
-        align-items: center;
+      grid-template-columns: 1fr;
+      gap: 50px;
+      text-align: center;
     }
-    .title h1 {
-        font-size: 40px;
+    
+    .heading {
+      font-size: 40px;
+      
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
-    .title a {
-        max-width: 300px;
-        padding: 20px;
+    
+    .joinButton {
+      margin: 0 auto;
+      max-width: 300px;
+      padding: 20px;
     }
-
+    
     .phone {
-        width: 350px;
+      width: 350px;
+      margin: 0 auto;
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     .wrap {
-        gap: 30px;
+      gap: 30px;
+      margin-top: 50px;
     }
-    .title h1 {
-        font-size: 35px;
+    
+    .heading {
+      font-size: 35px;
     }
-    .title a {
-        width: 100%;
-        padding: 15px;
-        font-size: 16px;
+    
+    .joinButton {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
     }
-}
-
-@media (max-width: 480px) {
+    
+    .description {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
     .wrap {
-        gap: 20px;
-        grid-template-columns: 1fr;
+      gap: 20px;
     }
-    .title h1 {
-        font-size: 28px;
+    
+    .heading {
+      font-size: 28px;
     }
-    .title a {
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
+    
+    .joinButton {
+      padding: 12px;
+      font-size: 14px;
     }
-
+    
     .phone {
-        width: 300px;
+      width: 280px;
     }
-}
+    
+    .circle {
+      display: none;
+    }
+  }

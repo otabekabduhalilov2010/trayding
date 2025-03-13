@@ -1,49 +1,90 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Импортируем Link
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import s from './Header.module.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const Header = () => {
-
-  
-  useEffect(() => {
-    AOS.init({
-        duration: 1000,  // Длительность анимации
-        once: true,      // Анимации будут срабатывать только один раз
-        easing: 'ease-in-out', // Тип анимации
-    });
-}, []);
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+    setDropdownOpen((prev) => !prev);
   };
 
+  const navLinks = [
+    { to: '/about', text: 'Об авторе' },
+    { to: '/learning', text: 'Обучение' },
+    { to: '/community', text: 'Сообщество' },
+    { to: '/book', text: 'Книга' },
+    { href: 'https://t.me/nikita_kremlev', text: 'Связаться' },
+  ];
+
+  const headerVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
 
   return (
-    <header className={s.header}>
+    <motion.header className={s.header} initial="hidden" animate="visible" variants={headerVariants}>
       <div className="container">
         <nav className={s.nav}>
           <div className={s.menu}>
-            <div className={s.link}>
-              {/* Добавляем ссылку на главную страницу */}
+            <motion.div className={s.logo} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link to="/">
-                <img src="./Logo.png" alt="Логотип" />
+                <img src="/Logo.png" alt="Логотип" />
               </Link>
-              <Link data-aos="fade-down" to="/about">Об авторе</Link>
-              <Link data-aos="fade-up" to="/learning">Обучение</Link>
-              <Link data-aos="fade-down" to="/community">Сообщество</Link>
-              <Link data-aos="fade-up" to="/book">Книга</Link>
+            </motion.div>
+
+            <div className={s.link}>
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.text}
+                  custom={i}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: 'easeOut' } }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {link.href ? <a href={link.href}>{link.text}</a> : <Link to={link.to}>{link.text}</Link>}
+                </motion.div>
+              ))}
             </div>
-            <div className={s.slk}>
-            <a href="https://t.me/nikita_kremlev">Связаться</a>
-            </div>
+
+            <motion.div className={`${s.burger} ${dropdownOpen ? s.active : ''}`} onClick={toggleDropdown} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </motion.div>
+
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  className={`${s.fullscreenMenu} ${dropdownOpen ? s.open : ''}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1, transition: { duration: 0.3, ease: 'easeOut' } }}
+                  exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2, ease: 'easeInOut' } }}
+                >
+                  {navLinks.map((link, i) => (
+                    <motion.div
+                      key={link.text}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0, transition: { duration: 0.3, ease: 'easeOut' } }}
+                      whileHover={{ scale: 1.1, color: '#00FFB2' }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {link.href ? <a href={link.href} onClick={toggleDropdown}>{link.text}</a> : <Link to={link.to} onClick={toggleDropdown}>{link.text}</Link>}
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
