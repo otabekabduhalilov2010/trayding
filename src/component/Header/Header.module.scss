@@ -1,15 +1,15 @@
 .header {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     background: rgba(10, 4, 47, 0.8);
     backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
 }
 
 .nav {
-    padding: 1rem 0;
+    padding: 0.8rem 0;
 }
 
 .menu {
@@ -21,41 +21,45 @@
     padding: 0 1rem;
 }
 
-.logo {
-    img {
-        height: 40px;
-        width: auto;
-    }
+.logo img {
+    height: 40px;
+    width: auto;
+    max-width: 100%;
 }
 
 .link {
     display: flex;
     gap: 2rem;
     align-items: center;
+}
 
-    a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        position: relative;
-        padding: 0.5rem 0;
+.link a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
 
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00FFB2;
-            transition: width 0.3s ease;
-        }
+.link a:hover {
+    color: #00FFB2;
+}
 
-        &:hover::after {
-            width: 100%;
-        }
-    }
+.link a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00FFB2;
+    transition: width 0.3s ease;
+}
+
+.link a:hover::after {
+    width: 100%;
 }
 
 .burger {
@@ -66,30 +70,27 @@
     height: 24px;
     cursor: pointer;
     z-index: 1001;
-    
-    span {
-        width: 100%;
-        height: 2px;
-        background: white;
-        border-radius: 4px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
+    transition: transform 0.3s ease;
+}
 
-    &.active {
-        span {
-            &:first-child {
-                transform: translateY(11px) rotate(45deg);
-            }
-            
-            &:nth-child(2) {
-                opacity: 0;
-            }
-            
-            &:last-child {
-                transform: translateY(-11px) rotate(-45deg);
-            }
-        }
-    }
+.burger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.active span:first-child {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:last-child {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 .fullscreenMenu {
@@ -106,32 +107,39 @@
     align-items: center;
     gap: 2rem;
     z-index: 1000;
-
-    a {
-        color: white;
-        text-decoration: none;
-        font-size: 2rem;
-        font-weight: 600;
-        position: relative;
-        padding: 0.5rem 0;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00FFB2;
-            transition: width 0.3s ease;
-        }
-
-        &:hover::after {
-            width: 100%;
-        }
-    }
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
 }
 
+.fullscreenMenu.active {
+    transform: translateY(0);
+}
+
+.fullscreenMenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.fullscreenMenu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00FFB2;
+    transition: width 0.3s ease;
+}
+
+.fullscreenMenu a:hover::after {
+    width: 100%;
+}
+
+/* Адаптив для мобильных */
 @media (max-width: 768px) {
     .link {
         display: none;
@@ -140,10 +148,43 @@
     .burger {
         display: flex;
     }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .fullscreenMenu a {
+        font-size: 1.5rem;
+    }
 }
 
-@media (min-width: 769px) {
-    .fullscreenMenu {
-        display: none;
+/* Улучшение для планшетов */
+@media (max-width: 1024px) {
+    .menu {
+        padding: 0 1.5rem;
+    }
+
+    .link {
+        gap: 1.5rem;
+    }
+}
+
+/* Улучшение для очень маленьких экранов */
+@media (max-width: 480px) {
+    .logo img {
+        height: 30px;
+    }
+
+    .fullscreenMenu a {
+        font-size: 1.2rem;
+    }
+
+    .burger {
+        width: 25px;
+        height: 20px;
+    }
+
+    .burger span {
+        height: 2px;
     }
 }

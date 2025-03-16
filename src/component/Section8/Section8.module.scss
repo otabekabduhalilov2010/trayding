@@ -80,11 +80,17 @@
   .input, .button {
       width: 280px;
   }
+
 }
 
 @media (max-width: 768px) {
   .container {
       padding: 1.5rem;
+  }
+
+  .img {
+    width: 100px;
+    margin-right: 600px;
   }
   .title {
       font-size: 1.8rem;
