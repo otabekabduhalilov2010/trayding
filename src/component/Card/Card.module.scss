@@ -46,34 +46,55 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 739px) {
   .card {
     width: 220px;
-    height: 400px;
-    padding: 10px;
+    height: 200px;
+    padding: 150px;
 
     h3 {
       font-size: 20px;
     }
 
     p {
-      font-size: 13px;
+      font-size: 10px;
     }
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 739px) {
+  .card {
+    width: 220px;
+    height: 350px;
+    padding: 20px;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+}
+
+
+
+
+
+
+@media (max-width: 590px) {
   .card {
     width: 100%;
     height: auto;
-    padding: 8px;
+    padding: 3px;
     
     h3 {
       font-size: 18px;
     }
 
     p {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 }

@@ -182,3 +182,18 @@
     font-size: 1.2rem;
   }
 }
+
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.section {
+  max-width: 100vw;
+}
+
+.stepsContainer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
